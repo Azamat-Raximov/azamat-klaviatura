@@ -119,12 +119,13 @@ function Index() {
   return (
     <div className="flex min-h-screen flex-col bg-background font-sans text-foreground">
       <header className="flex items-center justify-between gap-2 px-4 pt-3">
-        <a href={setup.url} download="Setup.exe"
-          className="flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-opacity hover:opacity-90">
-          <WinLogo className="h-4 w-4" />
-          {t.dl} <span className="opacity-70">Windows 10/11</span>
-        </a>
-        <div className="flex gap-1">
+        <span className="text-sm font-extrabold leading-tight tracking-tight sm:text-base md:text-lg">Azamat Klaviatura</span>
+        <div className="flex items-center gap-1">
+          <a href={setup.url} download="Setup.exe"
+            className="mr-1 flex items-center gap-2 whitespace-nowrap rounded-full sm:mr-2 bg-foreground px-4 py-2 text-xs font-bold text-background transition-opacity hover:opacity-90">
+            <WinLogo className="h-4 w-4" />
+            {t.dl} <span className="hidden opacity-70 sm:inline">Windows 10/11</span>
+          </a>
           {LABELS.map(([k, l]) => (
             <button key={k} onClick={() => setLang(k)}
               className={`rounded-full border px-3 py-1.5 text-xs font-bold transition-all ${lang === k ? "border-foreground bg-foreground text-background" : "border-foreground/30 text-foreground/70 hover:border-foreground/60 hover:text-foreground"}`}>
