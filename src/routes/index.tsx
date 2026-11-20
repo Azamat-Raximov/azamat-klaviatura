@@ -205,6 +205,17 @@ function Index() {
         </a>
         <p className="mt-3 text-sm text-hero-muted">Windows 10 / 11</p>
       </main>
+
+      <footer className="border-t border-foreground/10 px-4 py-6 text-center text-sm text-hero-muted">
+        <p>
+          © {new Date().getFullYear()} <span className="font-semibold text-foreground">Azamat Raximov</span>
+          <span className="mx-2" aria-hidden>·</span>
+          <a href="https://t.me/azamat_442" target="_blank" rel="noopener noreferrer"
+            className="font-semibold text-foreground underline-offset-4 hover:underline">
+            Telegram: @azamat_442
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }
