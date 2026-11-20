@@ -1,23 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import setup from "@/assets/Setup.exe.asset.json";
+import { LanguageSwitcher, type Lang } from "@/components/language-switcher";
 
+const SITE_URL = "https://azamat-klaviatura.vercel.app";
+const TITLE = "Azamat Klaviatura — Windows uchun avtomatik almashtirgich";
 const DESC = "Yangi alifboga avtomatik o'tkazuvchi Windows dasturi: o' → ö, g' → ğ, sh → ş, ch → ç.";
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Azamat Klaviatura",
+  url: SITE_URL,
+  description:
+    "Free Windows 10/11 tray app that automatically converts Uzbek Latin text to the new Uzbek alphabet while you type (o' → ö, g' → ğ, sh → ş, ch → ç) in Telegram, Word, browsers and Notepad.",
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Windows 10, Windows 11",
+  inLanguage: ["uz", "en", "ru"],
+  downloadUrl: `${SITE_URL}${setup.url}`,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  featureList: [
+    "Runs quietly in the system tray",
+    "Works in Telegram, Word, browsers, Notepad — anywhere",
+    "Automatically converts o' → ö, g' → ğ, sh → ş, ch → ç as you type",
+    "Capital letters become Ö, Ğ, Ş, Ç",
+    "Understands every apostrophe type: ' ` ’ ʻ",
+    "Smart memory keeps converting correctly after Backspace",
+    "Does not break Russian words on a Cyrillic keyboard",
+    "Pause or resume from the tray menu",
+    "Starts automatically with Windows",
+  ],
+  video: {
+    "@type": "VideoObject",
+    name: "Azamat Klaviatura — how it works",
+    embedUrl: "https://www.youtube.com/embed/svgKiBKf1m0",
+    thumbnailUrl: "https://i.ytimg.com/vi/svgKiBKf1m0/hqdefault.jpg",
+    uploadDate: "2026-11-20",
+  },
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Azamat Klaviatura — Windows uchun avtomatik almashtirgich" },
+      { title: TITLE },
       { name: "description", content: DESC },
-      { property: "og:title", content: "Azamat Klaviatura — Windows uchun avtomatik almashtirgich" },
+      { name: "keywords", content: "Azamat Klaviatura, yangi alifbo, o'zbek lotin alifbosi, ö ğ ş ç, Windows klaviatura, Uzbek new alphabet, узбекский алфавит" },
+      { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:locale", content: "uz_UZ" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: SITE_URL }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(JSON_LD) }],
   }),
   component: Index,
 });
 
-type Lang = "uz" | "en" | "ru";
 type Item = [string, string, string];
 const T: Record<Lang, { dl: string; title: string; sub: [string, string, string]; feat: string; items: Item[]; video: string; btn: string }> = {
   uz: {
@@ -72,7 +112,6 @@ const T: Record<Lang, { dl: string; title: string; sub: [string, string, string]
     video: "Как это работает", btn: "Скачать программу",
   },
 };
-const LABELS: [Lang, string][] = [["uz", "O'ZB"], ["en", "ENG"], ["ru", "РУС"]];
 
 function LazyVideo() {
   const ref = useRef<HTMLDivElement>(null);
@@ -116,6 +155,9 @@ function WinLogo({ className = "" }: { className?: string }) {
 function Index() {
   const [lang, setLang] = useState<Lang>("uz");
   const t = T[lang];
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
   return (
     <div className="flex min-h-screen flex-col bg-background font-sans text-foreground">
       <header className="flex items-center justify-between gap-2 px-4 pt-3">
@@ -126,12 +168,7 @@ function Index() {
             <WinLogo className="h-4 w-4" />
             {t.dl} <span className="hidden opacity-70 sm:inline">Windows 10/11</span>
           </a>
-          {LABELS.map(([k, l]) => (
-            <button key={k} onClick={() => setLang(k)}
-              className={`rounded-full border px-3 py-1.5 text-xs font-bold transition-all ${lang === k ? "border-foreground bg-foreground text-background" : "border-foreground/30 text-foreground/70 hover:border-foreground/60 hover:text-foreground"}`}>
-              {l}
-            </button>
-          ))}
+          <LanguageSwitcher lang={lang} onChange={setLang} />
         </div>
       </header>
 

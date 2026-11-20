@@ -1,0 +1,36 @@
+# Azamat Klaviatura
+
+> Azamat Klaviatura is a free Windows 10/11 program that automatically converts Uzbek Latin text to the new Uzbek alphabet while you type: o' → ö, g' → ğ, sh → ş, ch → ç. It works in any app — Telegram, Microsoft Word, web browsers, Notepad — and runs quietly in the system tray.
+
+- Website: https://azamat-klaviatura.vercel.app/
+- Download (Windows 10/11 installer, Setup.exe): https://azamat-klaviatura.vercel.app/__l5e/assets-v1/734a5987-4a1e-4a1a-8034-8a8f6f2acf38/Setup.exe
+- Demo video: https://www.youtube.com/watch?v=svgKiBKf1m0
+- Price: free
+- Platform: Windows 10, Windows 11
+- Languages of the website: Uzbek (default), English, Russian
+
+## Features
+
+- Runs quietly in the system tray without getting in your way
+- Works anywhere: Telegram, Word, browsers, Notepad
+- Automatically converts o' → ö, g' → ğ, sh → ş, ch → ç as you type
+- Capital letters become Ö, Ğ, Ş, Ç accordingly
+- Understands every apostrophe type: ' ` ’ ʻ
+- Smart memory: keeps converting correctly even after you fix a typo with Backspace
+- Never breaks Russian words when typing on a Cyrillic keyboard
+- Pause or resume anytime from the tray menu in the bottom-right corner
+- Starts automatically when the computer turns on
+
+## How to install
+
+1. Download Setup.exe from the website.
+2. Run the installer on Windows 10 or 11.
+3. Start typing in any app — the conversion happens automatically. Use the tray icon to pause or resume.
+
+## O'zbekcha
+
+Azamat Klaviatura — yangi alifboda yozishni osonlashtiradigan bepul Windows dasturi. Telegram, Word, brauzer yoki bloknot — qayerda yozmang, matningizni bir zumda yangi alifboga almashtiradi: o' → ö, g' → ğ, sh → ş, ch → ç. Katta harflar ham Ö, Ğ, Ş, Ç ga aylanadi. Orqa fonda (tray rejimida) jimgina ishlaydi, kompyuter yoqilganda avtomatik ishga tushadi, kirill klaviaturada ruscha so'zlarni buzmaydi.
+
+## Русский
+
+Azamat Klaviatura — бесплатная программа для Windows 10/11, которая автоматически переводит текст на новый узбекский алфавит при наборе: o' → ö, g' → ğ, sh → ş, ch → ç. Работает в Telegram, Word, браузере и блокноте, тихо сидит в системном трее, запускается вместе с Windows и не портит русские слова при наборе на кириллице.
