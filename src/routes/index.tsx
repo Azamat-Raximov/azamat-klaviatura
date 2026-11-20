@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import setup from "@/assets/Setup.exe.asset.json";
 
 const DESC = "Yangi alifboga avtomatik o'tkazuvchi Windows dasturi: o' → ö, g' → ğ, sh → ş, ch → ç.";
@@ -74,6 +74,37 @@ const T: Record<Lang, { dl: string; title: string; sub: [string, string, string]
 };
 const LABELS: [Lang, string][] = [["uz", "O'ZB"], ["en", "ENG"], ["ru", "РУС"]];
 
+function LazyVideo() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setStarted(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="aspect-video overflow-hidden rounded-2xl border-4 border-foreground/20 shadow-2xl">
+      {started && (
+        <iframe className="h-full w-full"
+          src="https://www.youtube.com/embed/svgKiBKf1m0?autoplay=1&mute=1&loop=1&playlist=svgKiBKf1m0&rel=0"
+          title="Yangi Alifbo" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
+      )}
+    </div>
+  );
+}
+
 function WinLogo({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 88 88" className={className} fill="currentColor" aria-hidden>
@@ -125,11 +156,7 @@ function Index() {
 
         <section className="mb-12 w-full max-w-2xl">
           <h2 className="mb-6 text-center text-xl font-bold tracking-wide md:text-2xl">{t.video}</h2>
-          <div className="aspect-video overflow-hidden rounded-2xl border-4 border-foreground/20 shadow-2xl">
-            <iframe className="h-full w-full"
-              src="https://www.youtube.com/embed/svgKiBKf1m0?autoplay=1&mute=1&loop=1&playlist=svgKiBKf1m0&rel=0"
-              title="Yangi Alifbo" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
-          </div>
+          <LazyVideo />
         </section>
 
         <a href={setup.url} download="Setup.exe"
