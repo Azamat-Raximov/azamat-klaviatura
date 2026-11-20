@@ -34,3 +34,8 @@ Azamat Klaviatura — yangi alifboda yozishni osonlashtiradigan bepul Windows da
 ## Русский
 
 Azamat Klaviatura — бесплатная программа для Windows 10/11, которая автоматически переводит текст на новый узбекский алфавит при наборе: o' → ö, g' → ğ, sh → ş, ch → ç. Работает в Telegram, Word, браузере и блокноте, тихо сидит в системном трее, запускается вместе с Windows и не портит русские слова при наборе на кириллице.
+
+## Author
+
+- Azamat Raximov
+- Telegram: https://t.me/azamat_442
