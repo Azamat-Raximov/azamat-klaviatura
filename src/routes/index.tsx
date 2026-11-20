@@ -142,22 +142,24 @@ function Index() {
           </p>
         </div>
 
-        <section className="mx-auto mb-12 w-full max-w-2xl">
-          <h2 className="mb-6 text-center text-xl font-bold tracking-wide md:text-2xl">{t.feat}</h2>
-          <ul className="space-y-3 text-base text-hero-muted md:text-lg">
-            {t.items.map(([a, b, c], i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-foreground" />
-                <span className="leading-relaxed">{a}<b className="font-semibold text-foreground">{b}</b>{c}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <div className="mx-auto mb-12 flex w-full max-w-2xl flex-col gap-12 lg:max-w-6xl lg:flex-row lg:items-start lg:gap-12">
+          <section className="w-full lg:flex-1">
+            <h2 className="mb-6 text-center text-xl font-bold tracking-wide md:text-2xl lg:text-left">{t.feat}</h2>
+            <ul className="space-y-3 text-base text-hero-muted md:text-lg lg:text-base xl:text-lg">
+              {t.items.map(([a, b, c], i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-foreground" />
+                  <span className="leading-relaxed">{a}<b className="font-semibold text-foreground">{b}</b>{c}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-        <section className="mb-12 w-full max-w-2xl">
-          <h2 className="mb-6 text-center text-xl font-bold tracking-wide md:text-2xl">{t.video}</h2>
-          <LazyVideo />
-        </section>
+          <section className="w-full lg:sticky lg:top-6 lg:flex-1">
+            <h2 className="mb-6 text-center text-xl font-bold tracking-wide md:text-2xl lg:text-left">{t.video}</h2>
+            <LazyVideo />
+          </section>
+        </div>
 
         <a href={setup.url} download="Setup.exe"
           className="flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-base font-extrabold uppercase tracking-wide text-background shadow-2xl transition-transform hover:scale-105">
