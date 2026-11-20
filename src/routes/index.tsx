@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import setup from "@/assets/Setup.exe.asset.json";
 import { LanguageSwitcher, type Lang } from "@/components/language-switcher";
 
 const SITE_URL = "https://azamat-klaviatura.vercel.app";
+const DOWNLOAD_URL = "https://github.com/Azamat-Raximov/azamat-klaviatura/releases/download/1.0/Setup.exe";
 const TITLE = "Azamat Klaviatura — Windows uchun avtomatik almashtirgich";
 const DESC = "Yangi alifboga avtomatik o'tkazuvchi Windows dasturi: o' → ö, g' → ğ, sh → ş, ch → ç.";
 
@@ -17,7 +17,7 @@ const JSON_LD = {
   applicationCategory: "UtilitiesApplication",
   operatingSystem: "Windows 10, Windows 11",
   inLanguage: ["uz", "en", "ru"],
-  downloadUrl: `${SITE_URL}${setup.url}`,
+  downloadUrl: DOWNLOAD_URL,
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   featureList: [
     "Runs quietly in the system tray",
@@ -163,7 +163,7 @@ function Index() {
       <header className="flex items-center justify-between gap-2 px-4 pt-3">
         <span className="text-sm font-extrabold leading-tight tracking-tight sm:text-base md:text-lg">Azamat Klaviatura</span>
         <div className="flex items-center gap-1">
-          <a href={setup.url} download="Setup.exe"
+          <a href={DOWNLOAD_URL}
             className="mr-1 flex items-center gap-2 whitespace-nowrap rounded-full sm:mr-2 bg-foreground px-4 py-2 text-xs font-bold text-background transition-opacity hover:opacity-90">
             <WinLogo className="h-4 w-4" />
             {t.dl} <span className="hidden opacity-70 sm:inline">Windows 10/11</span>
@@ -199,7 +199,7 @@ function Index() {
           </section>
         </div>
 
-        <a href={setup.url} download="Setup.exe"
+        <a href={DOWNLOAD_URL}
           className="flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-base font-extrabold uppercase tracking-wide text-background shadow-2xl transition-transform hover:scale-105">
           <WinLogo className="h-5 w-5" /> {t.btn}
         </a>

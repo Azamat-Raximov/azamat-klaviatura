@@ -3,7 +3,7 @@
 > Azamat Klaviatura is a free Windows 10/11 program that automatically converts Uzbek Latin text to the new Uzbek alphabet while you type: o' → ö, g' → ğ, sh → ş, ch → ç. It works in any app — Telegram, Microsoft Word, web browsers, Notepad — and runs quietly in the system tray.
 
 - Website: https://azamat-klaviatura.vercel.app/
-- Download (Windows 10/11 installer, Setup.exe): https://azamat-klaviatura.vercel.app/__l5e/assets-v1/734a5987-4a1e-4a1a-8034-8a8f6f2acf38/Setup.exe
+- Download (Windows 10/11 installer, Setup.exe): https://github.com/Azamat-Raximov/azamat-klaviatura/releases/download/1.0/Setup.exe
 - Demo video: https://www.youtube.com/watch?v=svgKiBKf1m0
 - Price: free
 - Platform: Windows 10, Windows 11
