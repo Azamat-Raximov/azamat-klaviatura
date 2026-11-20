@@ -6,9 +6,9 @@ const DESC = "Yangi alifboga avtomatik o'tkazuvchi Windows dasturi: o' → ö, g
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Yangi Alifbo — Windows uchun avtomatik almashtirgich" },
+      { title: "Azamat Klaviatura — Windows uchun avtomatik almashtirgich" },
       { name: "description", content: DESC },
-      { property: "og:title", content: "Yangi Alifbo — Windows uchun avtomatik almashtirgich" },
+      { property: "og:title", content: "Azamat Klaviatura — Windows uchun avtomatik almashtirgich" },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -22,7 +22,7 @@ type Item = [string, string, string];
 const T: Record<Lang, { dl: string; title: string; sub: [string, string, string]; feat: string; items: Item[]; video: string; btn: string }> = {
   uz: {
     dl: "Yuklab olish", title: "Yangi alifboda yozish endi oson!",
-    sub: ["Telegram, Word, brauzer yoki bloknot — qayerda yozmang, ", "Yangi Alifbo", " matningizni bir zumda yangi alifboga almashtiradi."],
+    sub: ["Telegram, Word, brauzer yoki bloknot — qayerda yozmang, ", "Azamat Klaviatura", " matningizni bir zumda yangi alifboga almashtiradi."],
     feat: "Dastur imkoniyatlari",
     items: [
       ["Kompyuterning orqa fonida (tray rejimida) ", "jimgina ishlaydi", " va xalaqit bermaydi"],
@@ -39,7 +39,7 @@ const T: Record<Lang, { dl: string; title: string; sub: [string, string, string]
   },
   en: {
     dl: "Download", title: "Typing in the new alphabet is now easy!",
-    sub: ["Telegram, Word, browser or Notepad — wherever you type, ", "Yangi Alifbo", " instantly converts your text to the new Uzbek alphabet."],
+    sub: ["Telegram, Word, browser or Notepad — wherever you type, ", "Azamat Klaviatura", " instantly converts your text to the new Uzbek alphabet."],
     feat: "Features",
     items: [
       ["Runs ", "quietly in the system tray", " without getting in your way"],
@@ -56,7 +56,7 @@ const T: Record<Lang, { dl: string; title: string; sub: [string, string, string]
   },
   ru: {
     dl: "Скачать", title: "Писать на новом алфавите теперь легко!",
-    sub: ["Telegram, Word, браузер или блокнот — где бы вы ни писали, ", "Yangi Alifbo", " мгновенно переводит текст на новый узбекский алфавит."],
+    sub: ["Telegram, Word, браузер или блокнот — где бы вы ни писали, ", "Azamat Klaviatura", " мгновенно переводит текст на новый узбекский алфавит."],
     feat: "Возможности программы",
     items: [
       ["Работает ", "тихо в системном трее", " и не мешает"],
@@ -99,7 +99,7 @@ function LazyVideo() {
       {started && (
         <iframe className="h-full w-full"
           src="https://www.youtube.com/embed/svgKiBKf1m0?autoplay=1&mute=1&loop=1&playlist=svgKiBKf1m0&rel=0"
-          title="Yangi Alifbo" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
+          title="Azamat Klaviatura" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
       )}
     </div>
   );
