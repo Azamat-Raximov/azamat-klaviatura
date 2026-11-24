@@ -196,6 +196,18 @@ function Index() {
           <section className="w-full lg:sticky lg:top-6 lg:flex-1">
             <h2 className="mb-6 text-center text-xl font-bold tracking-wide md:text-2xl lg:text-left">{t.video}</h2>
             <LazyVideo />
+            <p className="mt-3 text-sm leading-relaxed text-hero-muted">
+              *dastur 100% xavfsiz va uni ochiq kodini{" "}
+              <a
+                href="https://github.com/Azamat-Raximov/azamat-klaviatura"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-foreground underline underline-offset-4 hover:opacity-80"
+              >
+                github sahifada
+              </a>{" "}
+              ko&apos;rishingiz mumkin
+            </p>
           </section>
         </div>
 
