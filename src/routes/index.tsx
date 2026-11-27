@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher, type Lang } from "@/components/language-switcher";
 
 const SITE_URL = "https://azamat-klaviatura.vercel.app";
-const DOWNLOAD_URL = "https://github.com/Azamat-Raximov/azamat-klaviatura/releases/download/1.0/Setup.exe";
+const DOWNLOAD_URL = "https://github.com/Azamat-Raximov/azamat-klaviatura/releases/download/1.1/Azamat-klaviatura.exe";
 const TITLE = "Azamat Klaviatura — Windows uchun avtomatik almashtirgich";
 const DESC = "Yangi alifboga avtomatik o'tkazuvchi Windows dasturi: o' → ö, g' → ğ, sh → ş, ch → ç.";
 
